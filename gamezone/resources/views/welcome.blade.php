@@ -60,8 +60,29 @@
 			</nav>
 
 			<div class="user-panel" style="background-color:DarkViolet; color: white; float: left; margin-left: 10%;">
-				<a href="#" style="color: white;">Zaloguj</a>  /  <a href="#" style="color: white;">Zarejestruj się</a>
+			@if (Route::has('login'))
+				@auth
+					<a href="{{ url('/home') }}" style="color: white;">Profil</a>
+				@else
+					<a href="{{ route('login') }}" style="color: white;">Zaloguj</a>  / @if (Route::has('register')) <a href="{{ route('register') }}" style="color: white;">Zarejestruj się</a> @endif
+				@endauth
+			@endif
 			</div>
+
+			<!--<div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif-->
 
 			<div class="hs-text" style="display: inline-block; float: left; padding-top: 10px; margin-left: 30px; margin-right: none;">
 				<h6 style="font-family: Monospace;"><span style="color: BlueViolet;">TOKENY <span style="background-color:BlueViolet; color:white; border-radius: 30px; padding: 5px 10px;">0</span></span> &nbsp;&nbsp;&nbsp; <span style="color: Gold;">SALDO <span style="background-color:Gold; color:black; border-radius: 30px; padding: 5px 10px;">0</span></span></h6>
