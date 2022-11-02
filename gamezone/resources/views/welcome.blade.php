@@ -25,6 +25,15 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<style>
+		
+		div.owl-dot{
+			background-color: DarkViolet;
+		}
+
+
+	</style>
+
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -33,30 +42,38 @@
 	</div>
 
 	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
+	<header class="header-section" style="border-bottom: 1px solid DarkViolet;">
+		<div class="container" style="max-width: 1600px;">
+		<center>
 			<!-- logo -->
 			<a class="site-logo" href="index.html">
-				<img src="img/logo.png" alt="">
+				<img src="img/logo3.png"  alt="">
 			</a>
-			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
+
+			<nav class="main-menu" style="float: left; margin-left: 50px;">
+				<ul>
+					<li><a href="index.html">Strona główna</a></li>
+					<li><a href="review.html">Sklep</a></li>
+					<li><a href="categories.html">Profil</a></li>
+					<li><a href="contact.html">Dodaj Saldo</a></li>
+				</ul>
+			</nav>
+
+			<div class="user-panel" style="background-color:DarkViolet; color: white; float: left; margin-left: 10%;">
+				<a href="#" style="color: white;">Zaloguj</a>  /  <a href="#" style="color: white;">Zarejestruj się</a>
 			</div>
+
+			<div class="hs-text" style="display: inline-block; float: left; padding-top: 10px; margin-left: 30px; margin-right: none;">
+				<h6 style="font-family: Monospace;"><span style="color: BlueViolet;">TOKENY <span style="background-color:BlueViolet; color:white; border-radius: 30px; padding: 5px 10px;">0</span></span> &nbsp;&nbsp;&nbsp; <span style="color: Gold;">SALDO <span style="background-color:Gold; color:black; border-radius: 30px; padding: 5px 10px;">0</span></span></h6>
+			</div>
+
 			<!-- responsive -->
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
 			<!-- site menu -->
-			<nav class="main-menu">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="review.html">Games</a></li>
-					<li><a href="categories.html">Blog</a></li>
-					<li><a href="community.html">Forums</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
 		</div>
+	</center>
 	</header>
 	<!-- Header section end -->
 
@@ -67,18 +84,18 @@
 			<div class="hs-item set-bg" data-setbg="img/slider-1.jpg">
 				<div class="hs-text">
 					<div class="container">
-						<h2>The Best <span>Games</span> Out There</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
+						<h2>Walcz o <span style="color: DarkViolet;"><b>Nową</b></span> Przyszłość</h2>
+						<p>Kupuj i zdobywaj dodatki do swoich ulubionych gier <br>wraz z premierą nowej gry zdobądź dodatkowe tokeny przez limitowny czas. <br>Nie czekaj i już teraz zdobywaj ekskluzywne nagrody.</p>
+						<a href="#" class="site-btn">Dowiedz się więcej</a>
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="img/slider-2.jpg">
+			<div class="hs-item set-bg" data-setbg="img/slider-2a.jpg">
 				<div class="hs-text">
 					<div class="container">
-						<h2>The Best <span>Games</span> Out There</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
+						<h2>Obserwuj <span style="color: DarkViolet;"><b>Naszą</b></span> Strone</h2>
+						<p>Bądź na bieżąco z nowomi grami na GameZone i śledź swoje postępy. <br>Przygotuj się wcześniej na premiere nowej gry lub zawartości. </p>
+						<a href="#" class="site-btn">Obserwuj</a>
 					</div>
 				</div>
 			</div>
@@ -89,12 +106,12 @@
 
 	<!-- Latest news section -->
 	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
+		<div class="ln-title">Nowości</div>
 		<div class="news-ticker">
 			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="new">Premiera Overwatch 2</span>Wraz z premierą Overwatch 2 możesz uzyskać ekskluzywne nagrody i nie tylko. </div>
+				<div class="nt-item"><span class="strategy">Nowe gry</span>Nadchodzą nowe gry na GameZone od producentów Blizzarda oraz EA. </div>
+				<div class="nt-item"><span class="racing">Tokeny</span>Zdobywaj tokeny za kupienie gry lub osiągnięcie wyższego poziomu. Możesz je następnie wykorzystać w sklepie. </div>
 			</div>
 		</div>
 	</div>
@@ -106,42 +123,42 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="img/features/1.jpg">
-						<span class="cata new">new</span>
+					<div class="feature-item set-bg" data-setbg="img/features/1a.jpg">
+						<span class="cata new">Nowe</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-							<a href="#" class="fi-comment">3 Comments</a>
+							<h5><a href="#">Zdobądź dodatki do Overwatch 2</a></h5>
+							<p>Ekskluzywne skórki, zawieszki, wizytówki i nie tylko. </p>
+							<a href="#" class="fi-comment">Zobacz</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="img/features/2.jpg">
-						<span class="cata strategy">strategy</span>
+					<div class="feature-item set-bg" data-setbg="img/features/2a.jpg">
+						<span class="cata new">Nowe</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Justo tempor, rutrum erat id, molestie</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-							<a href="#" class="fi-comment">3 Comments</a>
+							<h5><a href="#">Gra Dying Light 2</a></h5>
+							<p>Gra RPG akcji z otwartym światem w pierwszej osobie w apokaliptycznym świecie wypełnionym zarażonymi. </p>
+							<a href="#" class="fi-comment">Zobacz</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="img/features/3.jpg">
-						<span class="cata new">new</span>
+					<div class="feature-item set-bg" data-setbg="img/features/3a.jpg">
+						<span class="cata strategy">Przecena -45%</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Nullam lacinia ex eleifend orci porttitor</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-							<a href="#" class="fi-comment">3 Comments</a>
+							<h5><a href="#">Gra Grand Theft Auto V</a></h5>
+							<p>Akcja gry została umiejscowiona w fikcyjnym mieście Los Santos oraz w terenach pozamiejskich nazwanych Blaine County w stanie San Andreas. </p>
+							<a href="#" class="fi-comment">Zobacz</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="img/features/4.jpg">
-						<span class="cata racing">racing</span>
+					<div class="feature-item set-bg" data-setbg="img/features/4a.jpg">
+						<span class="cata strategy">Przecena -45%</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Lacinia ex eleifend orci suscipit</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-							<a href="#" class="fi-comment">3 Comments</a>
+							<h5><a href="#">Gra Need for Speed: Heat</a></h5>
+							<p>gra wyścigowa z otwartym światem ulokowana w fikcyjnym mieście Palm City, będącym odpowiednikiem rzeczywistego miasta Miami. </p>
+							<a href="#" class="fi-comment">Zobacz</a>
 						</div>
 					</div>
 				</div>
@@ -155,8 +172,8 @@
 	<section class="recent-game-section spad set-bg" data-setbg="img/recent-game-bg.png">
 		<div class="container">
 			<div class="section-title">
-				<div class="cata new">new</div>
-				<h2>Recent Games</h2>
+				<div class="cata new">Nowe</div>
+				<h2>Ostatnie gry</h2>
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
@@ -327,7 +344,7 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="footer-logo text-white">
-						<img src="img/footer-logo.png" alt="">
+						<img src="img/logo3.png" alt="">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
 					</div>
 				</div>
