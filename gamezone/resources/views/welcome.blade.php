@@ -62,7 +62,7 @@
 			<div class="user-panel" style="background-color:DarkViolet; color: white; float: left; margin-left: 10%;">
 			@if (Route::has('login'))
 				@auth
-					<a href="{{ url('/home') }}" style="color: white;">Profil</a>
+					<a href="{{ url('/home') }}" style="color: white;">{{ Auth::user()->name }}</a>
 				@else
 					<a href="{{ route('login') }}" style="color: white;">Zaloguj</a>  / @if (Route::has('register')) <a href="{{ route('register') }}" style="color: white;">Zarejestruj się</a> @endif
 				@endauth
