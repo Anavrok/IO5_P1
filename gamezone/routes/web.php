@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/shop', function () {
+    return view('shop');
+});
+
 Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
     Auth::routes();
 });
