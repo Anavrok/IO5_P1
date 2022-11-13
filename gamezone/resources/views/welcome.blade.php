@@ -156,7 +156,7 @@
 					<div class="tournament-item mb-4 mb-lg-0">
 						<div class="ti-notic" style="background: white; font-family: monospace;">500 <span style="background-color:BlueViolet; color:white; border-radius: 30px; padding: 5px 10px;">T</span></div>
 						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
+							<div class="ti-thumb set-bg" data-setbg="img/avatars/ov2_logo.jpg"></div>
 							<div class="ti-text">
 								<h4>AWATAR</h4>
 								<ul>
@@ -331,31 +331,4 @@
 		</div>
 	</section>
 	<!-- Footer top section end -->
-
-	
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<ul class="footer-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="review.html">Games</a></li>
-				<li><a href="categories.html">Blog</a></li>
-				<li><a href="community.html">Forums</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-			<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Wszelkie Prawa zastrzeżone | Szablon został stworzony <i class="fa fa-heart-o" aria-hidden="true"></i> dzięki <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-		</div>
-	</footer>
-	<!-- Footer section end -->
-
-
-	<!--====== Javascripts & Jquery ======-->
-	<script src="{{URL::asset('js/jquery-3.2.1.min.js')}}"></script>
-	<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-	<script src="{{URL::asset('js/owl.carousel.min.js')}}"></script>
-	<script src="{{URL::asset('js/jquery.marquee.min.js')}}"></script>
-	<script src="{{URL::asset('js/main.js')}}"></script>
 @endsection

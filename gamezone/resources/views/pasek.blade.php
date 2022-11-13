@@ -19,6 +19,20 @@
 	<link rel="stylesheet" href="{{URL::asset('css/style.css')}}"/>
 	<link rel="stylesheet" href="{{URL::asset('css/animate.css')}}"/>
 
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet" />
 
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,7 +47,7 @@
 
 
 	</style>
-<body>
+<body class="g-sidenav-show bg-gray-200">
 
 <div id="preloder">
 	<div class="loader"></div>
@@ -43,11 +57,11 @@
 		<div class="container" style="max-width: 1600px;">
 		<center>
 			<!-- logo -->
-			<a class="site-logo" href="index.html">
-				<img src="img/logo3.png"  alt="">
-			</a>
+			<span class="site-logo" style="margin-top: 4px;">
+				<img src="{{URL::asset('img/logo3.png')}}">
+	</span>
 
-			<nav class="main-menu" style="float: left; margin-left: 50px;">
+			<nav class="main-menu" style="float: left; margin-left: 50px; margin-top: 8px;">
 				<ul>
 					<li><a href="/">Strona główna</a></li>
 					<li><a href="/shop">Sklep</a></li>
@@ -60,7 +74,7 @@
 				</ul>
 			</nav>
 
-			<div class="user-panel" style="background-color:DarkViolet; color: white; float: left; @if (Route::has('login')) @auth margin-left: 10%; @else margin-left: 30%; @endauth @endif">
+			<div class="user-panel" style="background-color:DarkViolet; margin-top: 8px; color: white; float: left; @if (Route::has('login')) @auth margin-left: 10%; @else margin-left: 30%; @endauth @endif">
 			@if (Route::has('login'))
 				@auth
 					<span style="color: white;">{{ Auth::user()->name }}</span>
@@ -86,7 +100,7 @@
             @endif-->
             @if (Route::has('login'))
             @auth
-			<div class="hs-text" style="display: inline-block; float: left; padding-top: 10px; margin-left: 30px; margin-right: none;">
+			<div class="hs-text" style="display: inline-block; float: left; padding-top: 10px; margin-left: 30px; margin-top: 8px; margin-right: none;">
 				<h6 style="font-family: Monospace;"><span style="color: BlueViolet;">TOKENY <span style="background-color:BlueViolet; color:white; border-radius: 30px; padding: 5px 10px;">0</span></span> &nbsp;&nbsp;&nbsp; <span style="color: Gold;">SALDO <span style="background-color:Gold; color:black; border-radius: 30px; padding: 5px 10px;">0</span></span></h6>
 			</div>
             @endauth
@@ -101,5 +115,29 @@
 	</center>
 	</header>
     @yield('content2')
+	<footer class="footer-section">
+		<div class="container">
+			<ul class="footer-menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="review.html">Games</a></li>
+				<li><a href="categories.html">Blog</a></li>
+				<li><a href="community.html">Forums</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+			<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Wszelkie Prawa zastrzeżone | Szablon został stworzony <i class="fa fa-heart-o" aria-hidden="true"></i> dzięki <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{{URL::asset('js/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+	<script src="{{URL::asset('js/owl.carousel.min.js')}}"></script>
+	<script src="{{URL::asset('js/jquery.marquee.min.js')}}"></script>
+	<script src="{{URL::asset('js/main.js')}}"></script>
 </body>
 </html>
