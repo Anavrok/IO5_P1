@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="birth_date" class="col-md-4 col-form-label text-md-end">{{ __('Birth Date') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="birth_date" type="text" class="form-control datepicker @error('birth_date') is-invalid @enderror" name="birth_date" value="{{ old('birth_date') }}" required autocomplete="birth_date" autofocus>
+
+                                @error('birth_date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

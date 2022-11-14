@@ -69,6 +69,7 @@
                     @auth
 					<li><a href="{{ url('/admin/dashboard') }}">Profil</a></li>
 					<li><a href="contact.html">Dodaj Saldo</a></li>
+					<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Wyloguj sie') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form></li>
                     @endauth
                     @endif
 				</ul>

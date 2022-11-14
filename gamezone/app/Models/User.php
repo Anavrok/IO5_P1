@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Carbon\Carbon;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,6 +23,8 @@ class User extends Authenticatable
         'email',
         'role',
         'password',
+        'birth_date',
+        'account_balance',
     ];
 
     /**
@@ -42,4 +45,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setBirthDateAttribute($value)
+    {
+        $this->attributes['birth_date'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
+    }
+
+    public function getBirthDateAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('m/d/Y');
+    }
 }
