@@ -15,6 +15,7 @@ class Games extends Model
         'genre',
         'value',
         'release_date',
+        'image',
     ];
 
     public function setBirthDateAttribute($value)

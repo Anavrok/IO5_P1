@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('genre');
             $table->integer('value')->nullable();
             $table->date('release_date')->nullable();
+            $table->string('image');
             $table->timestamps();
         });
     }

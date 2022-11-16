@@ -25,14 +25,13 @@
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet" />
+  
 
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -75,7 +74,7 @@
 				</ul>
 			</nav>
 
-			<div class="user-panel" style="background-color:DarkViolet; margin-top: 8px; color: white; float: left; @if (Route::has('login')) @auth margin-left: 10%; @else margin-left: 30%; @endauth @endif">
+			<div class="user-panel" style="background-color:DarkViolet; margin-top: 8px; color: white; float: left; @if (Route::has('login')) @auth margin-left: 0; @else margin-left: 30%; @endauth @endif">
 			@if (Route::has('login'))
 				@auth
 					<span style="color: white;">{{ Auth::user()->name }}</span>

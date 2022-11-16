@@ -50,7 +50,7 @@
               <img src="../img/avatars/avatar.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
             </div>
           </div>
-          <div class="col-auto my-auto" style="width: 40%;">
+          <div class="col-auto my-auto" style="width: 20%;">
             <div class="h-100">
               <h2 class="mb-1">
               {{ Auth::user()->name }}
@@ -62,13 +62,13 @@
           </div>
           <div class="col-auto my-auto" style="width: 40%;">
             <div class="h-100">
-              <center>
-              <h1 class="mb-1" style="margin-left: 50%;">
+              
+              <h1 class="mb-1" style="margin-left: 0;">
               <span style="background-color:#F0F2F5; border-radius: 40px; padding: 8px 28px; border: 2px solid #344767;">1</span>
               <p class="mb-1 font-weight-normal text-md" style="margin-top: 17px;">
               <span style="background-color:#F0F2F5; color:black; border-radius: 30px; padding: 5px 20px;">0 / <span style="color: blueViolet;">500</span></span>
               </p>
-              </center>
+              
               </h1>
             </div>
           </div>

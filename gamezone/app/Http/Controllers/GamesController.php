@@ -16,7 +16,9 @@ class GamesController extends Controller
      */
     public function index()
     {
-        //
+        $games = Games::all();
+
+        return view('dashboards.admins.games', compact('games'));
     }
 
     /**
@@ -26,7 +28,9 @@ class GamesController extends Controller
      */
     public function create()
     {
-        //
+        $games = Games::all();
+
+        return view('dashboards.admins.creates.games_create',compact('games'));
     }
 
     /**
@@ -37,7 +41,23 @@ class GamesController extends Controller
      */
     public function store(StoreGamesRequest $request)
     {
-        //
+        request()->validate([
+            'title' => 'required',
+            'genre' => 'required',
+            'value' => 'required',
+            'release_date' => 'required',
+            'image' => 'required',
+        ]);
+
+        Games::create([
+            'title' => request('title'),
+            'genre' => request('genre'),
+            'value' => request('value'),
+            'release_date' => request('release_date'),
+            'image' => request('image'),
+        ]);
+
+        return redirect('/admin/games');
     }
 
     /**

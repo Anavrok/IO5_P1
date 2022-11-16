@@ -16,7 +16,11 @@ class AdminController extends Controller
         return view('dashboards.admins.profile');
     }
     
-    function ticket(){
+    function settings(){
         return view('dashboards.admins.settings');
+    }
+
+    function games(){
+        return view('dashboards.admins.games');
     }
 }
