@@ -27,4 +27,9 @@ class Game extends Model
     {
         return Carbon::createFromFormat('Y-m-d', $this->attributes['release_date'])->format('m/d/Y');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

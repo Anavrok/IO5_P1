@@ -51,4 +51,9 @@ Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','PreventBackHisto
     Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');
     Route::get('settings',[UserController::class,'settings'])->name('user.settings');
+
+     //SALDO
+     Route::get('saldo',[UserController::class,'saldo'])->name('user.saldo');
+     Route::get('saldo/{saldo}/edit',[UserController::class, 'edit_saldo']);
+     Route::put('saldo/{saldo}',[UserController::class, 'update_saldo']);
 });

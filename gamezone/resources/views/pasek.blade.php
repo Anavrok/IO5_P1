@@ -67,7 +67,7 @@
                     @if (Route::has('login'))
                     @auth
 					<li><a href="{{ url('/admin/dashboard') }}">Profil</a></li>
-					<li><a href="contact.html">Dodaj Saldo</a></li>
+					<li><a href="{{ url('/user/saldo') }}">Twoje saldo</a></li>
 					<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Wyloguj sie') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form></li>
                     @endauth
                     @endif
@@ -101,7 +101,7 @@
             @if (Route::has('login'))
             @auth
 			<div class="hs-text" style="display: inline-block; float: left; padding-top: 10px; margin-left: 30px; margin-top: 8px; margin-right: none;">
-				<h6 style="font-family: Monospace;"><span style="color: BlueViolet;">TOKENY <span style="background-color:BlueViolet; color:white; border-radius: 30px; padding: 5px 10px;">0</span></span> &nbsp;&nbsp;&nbsp; <span style="color: Gold;">SALDO <span style="background-color:Gold; color:black; border-radius: 30px; padding: 5px 10px;">0</span></span></h6>
+				<h6 style="font-family: Monospace;"><span style="color: BlueViolet;">TOKENY <span style="background-color:BlueViolet; color:white; border-radius: 30px; padding: 5px 10px;">0</span></span> &nbsp;&nbsp;&nbsp; <span style="color: Gold;">SALDO <span style="background-color:Gold; color:black; border-radius: 30px; padding: 5px 10px;">{{ Auth::user()->account_balance }}zł</span></span></h6>
 			</div>
             @endauth
             @endif
