@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return Carbon::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('m/d/Y');
     }
+
+    public function games() 
+    {
+        return $this->belongsToMany(Game::class);
+    }
 }

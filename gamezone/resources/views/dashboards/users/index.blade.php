@@ -2,7 +2,9 @@
 
 @section('content2')
 
-      
+<link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+<link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+<link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet" />  
    
 <div class="main-content position-relative max-height-vh-100 h-100">
     <!-- Navbar -->

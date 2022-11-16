@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -20,4 +21,28 @@ class UserController extends Controller
         return view('dashboards.users.settings');
     }
 
+    function saldo(){ 
+        $users = User::all();
+
+        return view('dashboards.users.saldo',compact('users'));
+    }
+
+    function edit_saldo(User $saldo){ 
+        $users = User::all();
+
+        return view('dashboards.users.edits.saldo',compact('saldo','users'));
+    }
+
+    function update_saldo(Request $request, User $saldo){ 
+        
+        request()->validate([
+            'account_balance' => 'required',
+        ]);
+
+        $saldo->update([
+            'account_balance' => request('account_balance'),
+        ]);
+
+        return redirect('/user/saldo');
+    }
 }
