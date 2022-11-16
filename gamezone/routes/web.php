@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\GamesController;
+use App\Http\Controllers\GameController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,12 +39,12 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHis
     Route::get('settings',[AdminController::class,'settings'])->name('admin.settings');
 
     //GAMES
-    Route::get('games',[GamesController::class, 'index'])->name('admin.games');
-    Route::get('games/{game}/edit',[GamesController::class, 'edit']);
-    Route::put('games/{game}',[GamesController::class, 'update']);
-    Route::get('games/create',[GamesController::class, 'create']);
-    Route::post('games',[GamesController::class, 'store']);
-    Route::delete('games/{game}',[GamesController::class,'destroy']);
+    Route::get('games',[GameController::class, 'index'])->name('admin.games');
+    Route::get('games/{game}/edit',[GameController::class, 'edit']);
+    Route::put('games/{game}',[GameController::class, 'update']);
+    Route::get('games/create',[GameController::class, 'create']);
+    Route::post('games',[GameController::class, 'store']);
+    Route::delete('games/{game}',[GameController::class,'destroy']);
 });
 
 Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','PreventBackHistory']], function(){

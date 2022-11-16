@@ -13,18 +13,22 @@
   .input1 {
     width: 15%;
     font-size: 18px;
-    background-color: MediumSeaGreen;
-    color: white;
+    color: blueViolet;
     border-radius: 25px;
-    border: none;
+    border: 1px solid blueViolet;
   }
+
+  .input2:hover, .input1:hover {
+    color: #e91e63;
+  }
+
   .input2 {
     width: 35%;
     font-size: 18px;
-    background-color: ;
+    color: blueViolet;
     border-radius: 25px;
     border: none;
-    background-color: LightGray;
+    border: 1px solid blueViolet;
   }
   .w-5{
     display: none;
@@ -52,25 +56,36 @@
           <hr>
             <div class="col-lg-8 col-md-6 p-0">
 						    <div class="fi-content text-black">
-							    <h5><a href="#">Społeczność</a></h5>
+							    <h5><a href="{{ url('/admin/media') }}">Społeczność</a></h5>
 						    </div>
 				    </div>
           <hr>
             <div class="col-lg-8 col-md-6 p-0">
 						    <div class="fi-content text-black">
-							    <h5><a href="#">Ustawienia</a></h5>
+							    <h5><a href="{{ url('/admin/configs') }}">Ustawienia</a></h5>
 						    </div>
 				    </div>
           <hr>
             <div class="col-lg-8 col-md-6 p-0">
 						    <div class="fi-content text-black">
-							    <h5><a href="#">Personalizacja</a></h5>
+							    <h5><a href="{{ url('/admin/costumes') }}">Personalizacja</a></h5>
 						    </div>
 				    </div>
             <br><br><br>
+            
+              <div class="fi-content text-black" style="background-color: #e91e63; border-radius: 25px;">
+							  <h5 style="color: white;">Zarządzaj</h5>
+						  </div>
+            
+            <div class="col-lg-8 col-md-6 p-0" style="margin-top: 15px;">
+						    <div class="fi-content text-black">
+							    <h5><a href="{{ url('/admin/games') }}">Gry</a></h5>
+						    </div>
+				    </div>
+            <hr>
             <div class="col-lg-8 col-md-6 p-0">
 						    <div class="fi-content text-black">
-							    <h5><a href="#">Zarządzaj<br> Grami</a></h5>
+							    <h5><a href="{{ url('/admin/profiles') }}">Użytkownicy</a></h5>
 						    </div>
 				    </div>
           </center>
@@ -103,7 +118,7 @@
           <td>{{ $game->value }}</td>
           <td>{{ $game->release_date }}</td>
           <td><img src="../img/games/{{ $game->image }}.jpg" height="50px" alt="profile_image" class="w-30 border-radius-lg shadow-sm"></td>
-          <td><form action="#"><input class="input2" type="submit" value="Edycja"></form></td>
+          <td><form action="/admin/games/{{$game->id}}/edit"><input class="input2" type="submit" value="Edycja"></form></td>
         </tr>
       @endforeach
       </tbody>
