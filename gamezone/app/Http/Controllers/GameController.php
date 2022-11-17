@@ -66,9 +66,11 @@ class GameController extends Controller
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show1()
     {
-        //
+        $games = Game::orderBy('release_date', 'DESC')->get();;
+
+        return view('shop', compact('games'));
     }
 
     /**

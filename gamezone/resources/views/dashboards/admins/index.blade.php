@@ -6,6 +6,24 @@
 <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
 <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet" />
 
+<style>
+  .nakierowanie {
+    color: #344767;
+  }
+
+  .ramka {
+    border: 2px solid white;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .ramka:hover {
+    border: 2px solid cyan;
+  }
+
+</style>
+
       
    
 <div class="main-content position-relative max-height-vh-100 h-100">
@@ -15,52 +33,51 @@
     </div>
     <!-- End Navbar -->
     <div class="container-fluid px-2 px-md-4" >
-      <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('https://www.wallpaperflare.com/static/105/444/976/digital-art-cityscape-futuristic-city-overwatch-wallpaper.jpg');">
-        <span class="mask  bg-gradient-primary  opacity-6"></span>
+      <div class="page-header min-height-300 border-radius-xl mt-4"  style="background-image: url('https://www.wallpaperflare.com/static/105/444/976/digital-art-cityscape-futuristic-city-overwatch-wallpaper.jpg');">
+        <span class="mask opacity-6"></span>
       </div>
       <div class="mx-3 mx-md-4 mt-n6" style="float:left; width: 250px;">
         <div class="card card-body" style="margin-top: 90px;">
           <center>
-            <div class="col-lg-3 col-md-6 p-0">
-						    <div class="fi-content text-black">
-							    <h5><a href="{{ url('/admin/dashboard') }}">Profil</a></h5>
+            
+						    <div class="fi-content text-black" style="background-color: cyan; height: 40px; padding: 5px; border-radius: 5px;">
+							    <h5><a class="nakierowanie" href="{{ url('/admin/dashboard') }}">Profil</a></h5>
 						    </div>
-				    </div>
+				    
           <hr>
-            <div class="col-lg-8 col-md-6 p-0">
-						    <div class="fi-content text-black">
-							    <h5><a href="{{ url('/admin/media') }}">Społeczność</a></h5>
+						    <div class="fi-content text-black ramka">
+							    <h5><a class="nakierowanie"  href="{{ url('/admin/media') }}">Społeczność</a></h5>
 						    </div>
-				    </div>
+				    
           <hr>
-            <div class="col-lg-8 col-md-6 p-0">
-						    <div class="fi-content text-black">
+            
+						    <div class="fi-content text-black ramka">
 							    <h5><a href="{{ url('/admin/configs') }}">Ustawienia</a></h5>
 						    </div>
-				    </div>
+				    
           <hr>
-            <div class="col-lg-8 col-md-6 p-0">
-						    <div class="fi-content text-black">
+            
+						    <div class="fi-content text-black ramka">
 							    <h5><a href="{{ url('/admin/costumes') }}">Personalizacja</a></h5>
 						    </div>
-				    </div>
+				   
             <br><br><br>
             
               <div class="fi-content text-black" style="background-color: #e91e63; border-radius: 25px;">
 							  <h5 style="color: white;">Zarządzaj</h5>
 						  </div>
             
-            <div class="col-lg-8 col-md-6 p-0" style="margin-top: 15px;">
-						    <div class="fi-content text-black">
+            <div style="margin-top: 15px;">
+						    <div class="fi-content text-black ramka">
 							    <h5><a href="{{ url('/admin/games') }}">Gry</a></h5>
 						    </div>
 				    </div>
             <hr>
-            <div class="col-lg-8 col-md-6 p-0">
-						    <div class="fi-content text-black">
+            
+						    <div class="fi-content text-black ramka">
 							    <h5><a href="{{ url('/admin/profiles') }}">Użytkownicy</a></h5>
 						    </div>
-				    </div>
+				    
           </center>
         </div> 
       </div>
