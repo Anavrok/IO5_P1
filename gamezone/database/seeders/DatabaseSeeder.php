@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
         //games
         DB::table('games')->insert([
             'title' => 'Counter Strike: Global Offensive',
-            'genre' => 'Tactical first-person shooter',
+            'genre' => 'Strzelanka wieloosobowa',
             'value' => 29,
             'release_date' => Carbon::create('2012', '08', '12'),
             'image' => 'csgo',
@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('games')->insert([
             'title' => 'Grand Theft Auto V',
-            'genre' => 'Action-adventure',
+            'genre' => 'Gra akcji',
             'value' => 119,
             'release_date' => Carbon::create('2013', '09', '17'),
             'image' => 'gtav',
@@ -101,7 +101,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('games')->insert([
             'title' => 'FIFA 23',
-            'genre' => 'Sports',
+            'genre' => 'Gra sportowa',
             'value' => 199,
             'release_date' => Carbon::create('2022', '09', '26'),
             'image' => 'fifa23',
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('games')->insert([
             'title' => 'Cyberpunk 2077',
-            'genre' => 'Action role-playing',
+            'genre' => 'Fabularna gra akcji',
             'value' => 199,
             'release_date' => Carbon::create('2077', '02', '15'),
             'image' => 'cyberpunk',
@@ -131,10 +131,110 @@ class DatabaseSeeder extends Seeder
 
         DB::table('games')->insert([
             'title' => 'Need for Speed Heat',
-            'genre' => 'Racing',
+            'genre' => 'Gra wyścigowa',
             'value' => 159,
             'release_date' => Carbon::create('2019', '11', '08'),
             'image' => 'nfsh',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Apex Legends',
+            'genre' => 'Strzelanka wieloosobowa',
+            'value' => 0,
+            'release_date' => Carbon::create('2019', '02', '04'),
+            'image' => 'apex',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Rust',
+            'genre' => 'Survival',
+            'value' => 149,
+            'release_date' => Carbon::create('2018', '02', '08'),
+            'image' => 'rust',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'New World',
+            'genre' => 'MMO',
+            'value' => 139,
+            'release_date' => Carbon::create('2021', '09', '28'),
+            'image' => 'nw',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Football manager 2023',
+            'genre' => 'Menedźer piłkarski',
+            'value' => 199,
+            'release_date' => Carbon::create('2022', '11', '08'),
+            'image' => 'fm23',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Red Dead Redemption 2',
+            'genre' => 'Przygodowa gra akcji',
+            'value' => 199,
+            'release_date' => Carbon::create('2018', '10', '26'),
+            'image' => 'rdr2',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'The Forest',
+            'genre' => 'Survival horror',
+            'value' => 49,
+            'release_date' => Carbon::create('2018', '04', '30'),
+            'image' => 'tf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Phasmophobia',
+            'genre' => 'Survival horror',
+            'value' => 49,
+            'release_date' => Carbon::create('2020', '09', '18'),
+            'image' => 'phasmo',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'God of War',
+            'genre' => 'Przygodowa gra akcji',
+            'value' => 199,
+            'release_date' => Carbon::create('2018', '04', '20'),
+            'image' => 'gow',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Euro Truck Simulator 2',
+            'genre' => 'Gra symulacyjna',
+            'value' => 19,
+            'release_date' => Carbon::create('2012', '10', '19'),
+            'image' => 'ets2',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('games')->insert([
+            'title' => 'Wiedźmin 3: Dziki Gon',
+            'genre' => 'Fabularna gra akcji',
+            'value' => 99,
+            'release_date' => Carbon::create('2015', '05', '18'),
+            'image' => 'w3dg',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

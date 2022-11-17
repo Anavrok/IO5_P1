@@ -48,6 +48,17 @@
   .ramka:hover {
     border: 2px solid cyan;
   }
+
+  .search {
+    width: 100%;
+    font-size: 18px;
+    color: blueViolet;
+    border-radius: 25px;
+    border: 1px solid blueViolet;
+    margin-bottom: 10px;
+    background-color: #F0F0F0;
+    padding: 5px; 
+  }
 </style>
    
 <div class="main-content position-relative max-height-vh-100 h-100">
@@ -109,6 +120,15 @@
 <br>
 <br>
 
+<form class="input-group" target="" action="/admin/games/" method="GET">
+    <div class="search">
+      <input type="text" name="search" placeholder="Wyszukaj grę..." class="form-control" value="{{ request()->query('search') }}">
+      <div class="input-group-addon">
+        <span class="input-group-text"><i class="ti-search"></i></span>
+      </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
       <tr>
@@ -122,7 +142,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($games as $game)
+    @forelse($games as $game)
         <tr>
           <td>{{ $game->id }}</td>
           <td>{{ $game->title }}</td>
@@ -132,9 +152,12 @@
           <td><img src="../img/games/{{ $game->image }}.jpg" height="50px" alt="profile_image" class="w-30 border-radius-lg shadow-sm"></td>
           <td><form action="/admin/games/{{$game->id}}/edit"><input class="input2" type="submit" value="Edycja"></form></td>
         </tr>
-      @endforeach
+      @empty
+      <p class="text-center">Brak wyszukań dla <strong>{{ request()->query('search') }}</strong</p>
+      @endforelse
       </tbody>
   </table>
+  {{ $games->appends(['search' => request()->query('search') ])->links() }}
       </div>
     </div>
     <footer class="footer py-4  ">

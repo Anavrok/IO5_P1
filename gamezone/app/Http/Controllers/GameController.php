@@ -16,7 +16,12 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
+        $search = request()->query('search');
+        if ($search) {
+            $games = Game::where('title','LIKE',"%{$search}%")->paginate(4);
+        } else {
+            $games = Game::paginate(4);
+        }
 
         return view('dashboards.admins.games', compact('games'));
     }
@@ -68,7 +73,8 @@ class GameController extends Controller
      */
     public function show1()
     {
-        $games = Game::orderBy('release_date', 'DESC')->get();;
+
+        $games = Game::orderBy('release_date', 'DESC')->paginate(5);
 
         return view('shop', compact('games'));
     }
