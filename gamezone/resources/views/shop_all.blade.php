@@ -25,7 +25,7 @@
 	background-image: url("assets/img/login-bg.png");
 	background-position: center;
  	background-repeat: no-repeat;
-  	background-size: 100% 1000%;
+  	background-size: 100% 2000%;
   }
 
   img:hover {
@@ -34,6 +34,16 @@
     opacity: 0.5;
   }
 
+  .search {
+    width: 100%;
+    font-size: 18px;
+    color: blueViolet;
+    border-radius: 25px;
+    border: 1px solid blueViolet;
+    margin: 10px;
+    background-color: #F0F0F0;
+    padding: 5px; 
+  }
 </style>
 
       
@@ -80,57 +90,35 @@
             </div>
           </div>
       </div>
-	  
-	  <div class="row">
-          
-            
-              <div class="card card-plain h-50">
-                <div class="card-header pb-0 p-3">
-                
-		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="img/slider_shop2.jpg" style="height: 450px; border: 3px solid black;">
-				<div class="hs-text">
-					<div class="container" style="height: 600px;">
-						<h2 style="color: black;">Dostępne nowe gry</h2>
-						
-						
-					</div>
-				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="img/slider_shop1.jpg" style="height: 450px; border: 3px solid black;">
-				<div class="hs-text">
-					<div class="container" style="height: 600px;">
-						<h2>Nowe dodatki do gier</h2>
-						
-						
-					</div>
-				</div>
-			</div>
-		</div> 
-    <div class="card-header pb-0 p-3">
+      <center>
+      <form class="input-group" target="" action="/shop_all" method="GET">
+      <div class="search">
+      <input style="text-align: center;" type="text" name="search" placeholder="Wyszukaj grę..." class="form-control" value="{{ request()->query('search') }}">  
+    </div>
+    </form>
+</center>
+    <div class="row gx-4 mb-2" style="width: 100%; margin-left: 0.1%;">
+        @forelse($games as $game)
+        @if($game->value != 0)
+        @if($game->tit != $tmp)
+        <div class="card-header pb-0 p-3" style="width: 90%;">
                   <div class="row">
                     <div class="col-md-8 d-flex align-items-center">
-                      <h5 class="mb-0" style="color: DarkSlateBlue; font-family: monospace;">NAJNOWSZE GRY</h5>
+                      <h5 class="mb-0" style="color: DarkSlateBlue; font-family: monospace;">{{ $game->tit }}</h5>
                     </div>
                   </div>
-                </div>
-    <div class="row gx-4 mb-2" style="width: 100%; margin-left: 0.5%;">
-        @foreach($games as $game)
-        @php($count=0)
-        @if($count < 6)
+              </div>
+            <?php  $tmp = $game->tit; ?>
+          @endif
           <div class="col-auto" style="width: 20%; margin-top: 1%; margin-bottom: 1%;">
             <div class="position-relative">
               <a href="#"><img class="img" src="../img/games/{{ $game->image }}.jpg" alt="profile_image" class="border-radius-lg shadow-sm" style="width: 80%; height: 220px; border-radius: 10px;"></a>
             </div>
           </div>
-          @php($count++)
-        @endif
-        @endforeach
-</div>
-</div>
-                
-          
-        </div>
+          @endif
+          @empty
+          <p class="text-center">Brak wyszukań dla <strong>{{ request()->query('search') }}</strong</p>
+        @endforelse
       </div>
     </div>
 </div>

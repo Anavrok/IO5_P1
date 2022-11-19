@@ -79,6 +79,20 @@ class GameController extends Controller
         return view('shop', compact('games'));
     }
 
+    public function show2()
+    {
+        $search = request()->query('search');
+        if ($search) {
+            $games = Game::select(\DB::raw("image, value, SUBSTR(title, 1, 1) as tit"))->where('title','LIKE',"%{$search}%")->orderBy('title', 'ASC')->get();
+        } else {
+            $games = Game::select(\DB::raw("image, value, SUBSTR(title, 1, 1) as tit"))->orderBy('title', 'ASC')->get();
+        }
+
+        $tmp = " ";
+
+        return view('shop_all', compact('games','tmp'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
