@@ -77,7 +77,7 @@
         </div>
         <div class="row">
           <div class="row">
-            <div class="col-12 col-xl-4">
+            <div class="col-12 col-xl-12">
               <div class="card card-plain h-100">
                 <div class="card-header pb-0 p-3">
                   <div class="row">
@@ -86,9 +86,21 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-body p-3">
-                  <-Tutaj gry->
+
+                <div class="card-body p-1">
+                  <div class="row gx-4 mb-2" style="width: 100%; margin-left: 0.5%;">
+                   @forelse($games as $game)
+                      <div class="col-auto" style="width: 20%; margin-top: 1%; margin-bottom: 1%;">
+                        <div class="position-relative">
+                          <a href="#"><img class="img" src="../img/games/{{ $game->image }}.jpg" alt="profile_image" class="border-radius-lg shadow-sm" style="width: 80%; height: 220px; border-radius: 10px;"></a>
+                        </div>
+                      </div>
+                      @empty
+                      <p class="text-center">Nie posiadasz żadnych gier</strong</p>
+                    @endforelse
+                  </div>
                 </div>
+
                 <div class="card-header pb-0 p-3">
                   <div class="row">
                     <div class="col-md-8 d-flex align-items-center">

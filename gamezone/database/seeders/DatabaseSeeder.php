@@ -238,5 +238,31 @@ class DatabaseSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
+        //game_users
+        DB::table('game_users')->insert([
+            'game_id' => '1',
+            'user_id' => '2',
+        ]);
+
+        DB::table('game_users')->insert([
+            'game_id' => '2',
+            'user_id' => '2',
+        ]);
+
+        DB::table('game_users')->insert([
+            'game_id' => '5',
+            'user_id' => '2',
+        ]);
+
+        DB::table('game_users')->insert([
+            'game_id' => '8',
+            'user_id' => '2',
+        ]);
+
+        DB::table('game_users')->insert([
+            'game_id' => '2',
+            'user_id' => '3',
+        ]);
     }
 }

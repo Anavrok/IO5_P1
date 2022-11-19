@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Game;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     function index(){
+        $games = DB::table('games')
+            ->selectRaw('*')
+            ->join('game_users','games.id','=','game_users.game_id')
+            ->join('users','users.id','=','game_users.user_id')
+            ->where('game_users.user_id','=',Auth()->user()->id)
+            ->get();
 
-        return view('dashboards.users.index');
+        return view('dashboards.users.index', compact('games'));
     }
 
     function profile(){
