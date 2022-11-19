@@ -16,6 +16,7 @@ class UserController extends Controller
             ->join('game_users','games.id','=','game_users.game_id')
             ->join('users','users.id','=','game_users.user_id')
             ->where('game_users.user_id','=',Auth()->user()->id)
+            ->orderBy('title', 'ASC')
             ->get();
 
         return view('dashboards.users.index', compact('games'));
