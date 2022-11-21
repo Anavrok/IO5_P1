@@ -22,7 +22,7 @@
   }
 
   body {
-	background-image: url("assets/img/login-bg.png");
+	background-image: url("assets/img/shop.png");
 	background-position: center;
  	background-repeat: no-repeat;
   	background-size: 100% 2000%;
@@ -112,7 +112,10 @@
           @endif
           <div class="col-auto" style="width: 20%; margin-top: 1%; margin-bottom: 1%;">
             <div class="position-relative">
-              <a href="#"><img class="img" src="../img/games/{{ $game->image }}.jpg" alt="profile_image" class="border-radius-lg shadow-sm" style="width: 80%; height: 220px; border-radius: 10px;"></a>
+            <form action="/shop_all/{{$game->id}}/create">
+            <input class="input1" type="submit" @foreach($gameusers as $gameuser) @if($game->id == $gameuser->game_id && $gameuser->user_id == Auth::user()->id ) disabled @else value="Zakup" @endif @endforeach>
+              </form>
+              <img class="img" src="../img/games/{{ $game->image }}.jpg" alt="profile_image" class="border-radius-lg shadow-sm" style="width: 80%; height: 220px; border-radius: 10px;">
             </div>
           </div>
           @endif

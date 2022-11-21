@@ -32,8 +32,10 @@ Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('shop',[GameController::class, 'show1'])->name('shop');
-Route::get('shop_all',[GameController::class, 'show2'])->name('shop_all');
+Route::get('shop',[GameController::class, 'show1']);
+Route::get('shop_all',[GameController::class, 'show2']);
+Route::get('shop_all/{game}/create',[GameController::class, 'create2']);
+Route::post('shop_all',[GameController::class, 'store2']);
 
 Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
     Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
@@ -47,7 +49,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHis
     Route::get('games/create',[GameController::class, 'create']);
     Route::post('games',[GameController::class, 'store']);
     Route::delete('games/{game}',[GameController::class,'destroy']);
-
 });
 
 Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','PreventBackHistory']], function(){

@@ -22,7 +22,7 @@
   }
 
   body {
-	background-image: url("assets/img/login-bg.png");
+	background-image: url("assets/img/shop.png");
 	background-position: center;
  	background-repeat: no-repeat;
   	background-size: 100% 1000%;

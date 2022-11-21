@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Game;
+use App\Models\GameUser;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
@@ -38,6 +40,12 @@ class GameController extends Controller
         return view('dashboards.admins.creates.games_create',compact('games'));
     }
 
+    public function create2(Game $game)
+    {
+        $gameusers = GameUser::all();
+
+        return view('creates.shop_all',compact('game','gameusers'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -65,6 +73,33 @@ class GameController extends Controller
         return redirect('/admin/games');
     }
 
+    public function store2(StoreGameRequest $request)
+    {
+        DB::beginTransaction();
+            $zaplac = $request->input('value');
+            $user = $request->get('user_id');
+            $gra = $request->get('game_id');
+
+           
+
+            DB::update('update users set account_balance = account_balance - ? where id = ?',[$zaplac, $user]);
+            //Konto_Klienta::where('id', $odbiorca)->update(['saldo' => $suma]);
+
+        DB::commit();
+
+        request()->validate([
+            'game_id' => 'required',
+            'user_id' => 'required',
+        ]);
+
+        GameUser::create([
+            'game_id' => request('game_id'),
+            'user_id' => request('user_id'),
+        ]);
+
+        return redirect('/shop_all');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -83,14 +118,16 @@ class GameController extends Controller
     {
         $search = request()->query('search');
         if ($search) {
-            $games = Game::select(\DB::raw("image, value, SUBSTR(title, 1, 1) as tit"))->where('title','LIKE',"%{$search}%")->orderBy('title', 'ASC')->get();
+            $games = Game::select(\DB::raw("id, image, value, SUBSTR(title, 1, 1) as tit"))->where('title','LIKE',"%{$search}%")->orderBy('title', 'ASC')->get();
         } else {
-            $games = Game::select(\DB::raw("image, value, SUBSTR(title, 1, 1) as tit"))->orderBy('title', 'ASC')->get();
+            $games = Game::select(\DB::raw("id, image, value, SUBSTR(title, 1, 1) as tit"))->orderBy('title', 'ASC')->get();
         }
 
         $tmp = " ";
 
-        return view('shop_all', compact('games','tmp'));
+        $gameusers = GameUser::all();
+
+        return view('shop_all', compact('games','tmp','gameusers'));
     }
 
     /**
