@@ -34,6 +34,14 @@
     opacity: 0.5;
   }
 
+  .input1 {
+    width: 40%;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid blueViolet;
+  }
+
   .search {
     width: 100%;
     font-size: 18px;
